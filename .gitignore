@@ -1,0 +1,7 @@
+node_modules
+dist
+.env.local
+*.log
+vite.config.js.timestamp-*.mjs
+__test_delete__.txt
+__testdir__/

@@ -1,0 +1,29 @@
+# Necesario porque la app usa BrowserRouter (react-router-dom) -URLs "limpias" como
+# /modelos/bj40-pro en vez de /#/modelos/bj40-pro. Sin esto, Apache (Ferozo) devuelve 404 al
+# entrar directo a esas URLs o al refrescar la página, porque busca una carpeta/archivo real
+# con ese nombre en public_html/ y no existe -todo el ruteo lo resuelve React en el navegador,
+# así que el servidor SIEMPRE tiene que servir index.html y dejar que React decida qué mostrar.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Si el archivo o carpeta pedido existe de verdad (index.html, /assets/*.js, favicon, etc.),
+  # se sirve tal cual -no hay que reescribir nada.
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Todo lo demás (cualquier ruta de la SPA) cae a index.html.
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# Cache largo para los assets con hash en el nombre (Vite les pone hash, así que un cache
+# agresivo es seguro: si cambia el contenido, cambia el nombre del archivo).
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+</IfModule>
