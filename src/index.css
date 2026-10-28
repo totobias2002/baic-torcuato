@@ -1877,3 +1877,9 @@ h2.vehicle-cards__heading{text-align:center;font-size:1.6rem;font-weight:800;lin
   .threesixty__badge small{font-size:.55rem;letter-spacing:1px;}
 }
 .service-form-section__title{text-align:center;color:#fff;font-size:2rem;font-weight:700;margin:0 0 10px;}
+.service-contact{max-width:1366px;margin:0 auto;padding:60px 20px;display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:center;}
+.service-contact__info h2{font-size:2rem;font-weight:700;margin:0 0 14px;}
+.service-contact__address{font-size:1.1rem;margin:0 0 24px;color:#333;}
+.service-contact__actions{display:flex;flex-wrap:wrap;gap:12px;}
+.service-contact__map{width:100%;height:360px;border:0;border-radius:4px;}
+@media(max-width:900px){.service-contact{grid-template-columns:1fr;padding:40px 20px;}}

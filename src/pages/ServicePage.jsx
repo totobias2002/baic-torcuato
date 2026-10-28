@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 import { submitContactRequest, buildWhatsappUrl } from '../api/contact.js'
-import { socialLinks } from '../data/dealers.js'
+import { socialLinks, serviceInfo } from '../data/dealers.js'
 import { useToast } from '../toast/ToastContext.jsx'
 import { serviceHero } from '../data/serviceHero.js'
 import { serviceFormBg } from '../data/serviceFormBg.js'
@@ -10,6 +10,8 @@ const MIN_FILL_SECONDS = 2500
 const COOLDOWN_MS = 30000
 
 const SERVICE_TYPES = ['Service de mantenimiento', 'Reparación', 'Garantía', 'Repuestos', 'Otra consulta']
+// Si todavía no se cargó el WhatsApp de postventa se usa el del sitio.
+const serviceWhatsappBase = serviceInfo.whatsapp ? `https://wa.me/${serviceInfo.whatsapp}` : socialLinks.whatsapp
 const EMPTY_FORM = { name: '', phone: '', email: '', serviceType: '', plate: '', message: '' }
 
 function ServiceRequestForm() {
@@ -37,7 +39,7 @@ function ServiceRequestForm() {
       form.message
     ].filter(Boolean).join('\n')
     const data = { name: form.name, phone: form.phone, email: form.email, message }
-    window.open(buildWhatsappUrl(socialLinks.whatsapp, data), '_blank', 'noopener')
+    window.open(buildWhatsappUrl(serviceWhatsappBase, data), '_blank', 'noopener')
     localStorage.setItem('serviceLastSent', String(Date.now()))
     showToast('Se abrió WhatsApp con tu consulta: tocá enviar para que nos llegue', 'success')
     setForm(EMPTY_FORM)
@@ -66,6 +68,41 @@ function ServiceRequestForm() {
   )
 }
 
+function ServiceContact() {
+  const { address, whatsapp } = serviceInfo
+  if (!address && !whatsapp) return null
+  const mapsQuery = encodeURIComponent(address)
+  return (
+    <section className="service-contact">
+      <div className="service-contact__info">
+        <h2>Visitanos</h2>
+        {address && <p className="service-contact__address">{address}</p>}
+        <div className="service-contact__actions">
+          {whatsapp && (
+            <a className="ui-button ui-button--dark ui-button--md" href={`https://wa.me/${whatsapp}`} target="_blank" rel="noreferrer">
+              WHATSAPP POSTVENTA
+            </a>
+          )}
+          {address && (
+            <a className="ui-button ui-button--dark ui-button--md" href={`https://www.google.com/maps/search/?api=1&query=${mapsQuery}`} target="_blank" rel="noreferrer">
+              CÓMO LLEGAR
+            </a>
+          )}
+        </div>
+      </div>
+      {address && (
+        <iframe
+          className="service-contact__map"
+          title="Ubicación del centro de postventa"
+          src={`https://www.google.com/maps?q=${mapsQuery}&output=embed`}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
+      )}
+    </section>
+  )
+}
+
 export default function ServicePage() {
   return (
     <>
@@ -83,6 +120,7 @@ export default function ServicePage() {
         </div>
       </section>
       <ServiceRequestForm />
+      <ServiceContact />
     </>
   )
 }
