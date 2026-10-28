@@ -41,7 +41,7 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <p className="footer__copyright">© 2026 BAIC Pacheco | Todos los derechos reservados.</p>
+      <p className="footer__copyright">© 2026 BAIC Torcuato | Todos los derechos reservados.</p>
     </footer>
   )
 }
