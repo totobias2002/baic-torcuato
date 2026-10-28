@@ -148,6 +148,7 @@ export default function NavBar() {
             <AppNavLink to="/nosotros" onClick={closeAll}>Empresa</AppNavLink>
             <AppNavLink to="/novedades" onClick={closeAll}>Novedades</AppNavLink>
             <AppNavLink to="/contacto" onClick={closeAll}>Contacto</AppNavLink>
+            <AppNavLink to="/service" className="navbar__postventa" onClick={closeAll}>Postventa</AppNavLink>
           </div>
         </nav>
       </div>

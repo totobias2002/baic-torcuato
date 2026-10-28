@@ -195,8 +195,8 @@ img{max-width:100%;display:block;}
 }
 .ui-logo{display:inline-flex;align-items:center;}
 .navbar .ui-logo{margin-left:100px;}
-/* El logo nuevo (BAIC + ARCFOX + PACHECO apilados) es un cuadrado -mucho más alto en
-   proporción que el anterior (BAIC + PACHECO en 2 líneas cortas). A 40px de alto quedaba
+/* El logo nuevo (BAIC + ARCFOX + TORCUATO apilados) es un cuadrado -mucho más alto en
+   proporción que el anterior (BAIC + TORCUATO en 2 líneas cortas). A 40px de alto quedaba
    un cuadradito ilegible; lo agrandamos para que se lean las 3 líneas sin salirse del
    navbar (86px de alto). */
 .ui-logo__img{height:82px;width:auto;display:block;}
@@ -1876,3 +1876,8 @@ h2.vehicle-cards__heading{text-align:center;font-size:1.6rem;font-weight:800;lin
   .threesixty__badge span{font-size:.9rem;}
   .threesixty__badge small{font-size:.55rem;letter-spacing:1px;}
 }
+
+/* Botón "Postventa" del navbar: pill rojo BAIC, alineado con el resto de los links */
+.navbar__postventa{align-self:center;padding:9px 20px;border-radius:999px;background:#d1251a;color:#fff;font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:background .2s;}
+.navbar__postventa:hover{background:#a81c13;color:#fff;}
+@media (max-width:900px){.navbar__postventa{align-self:flex-start;margin:12px 20px;}}

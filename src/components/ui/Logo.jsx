@@ -5,7 +5,7 @@ import logoOnDarkBg from '../icons/baic-torcuato-logo-tight.png'
 
 // En el navbar (desktop) el fondo arranca transparente sobre el hero oscuro y se pone
 // blanco sólido al pasar el mouse por encima (o con el dropdown de Modelos abierto).
-// Con un solo logo de texto oscuro, "PACHECO" quedaba casi invisible sobre el hero.
+// Con un solo logo de texto oscuro, "TORCUATO" quedaba casi invisible sobre el hero.
 // Con swapOnHover mostramos el logo de texto claro (pensado para fondo oscuro) por
 // default, y lo cruzamos con el de texto oscuro cuando el navbar se pone blanco.
 export default function Logo({ to = '/', className = '', dark = false, swapOnHover = false, onClick }) {

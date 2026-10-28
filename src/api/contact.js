@@ -10,7 +10,7 @@ const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_ID || 'mzepvybw'
 // WhatsApp. El mail (Formspree) quedó como respaldo: no depende de que alguien lo lea.
 export const buildWhatsappUrl = (baseUrl, { name, phone, email, message }) => {
   const lines = [
-    'Hola! Quiero hacer una consulta desde la web de BAIC Pacheco.',
+    'Hola! Quiero hacer una consulta desde la web de BAIC Torcuato.',
     '',
     `Nombre: ${name}`,
     `Teléfono: ${phone}`,

@@ -1,7 +1,7 @@
 import proximamenteDesktop from '../../assets/images/hero/baic-pacheco-proximamente-desktop.png'
 import proximamenteMobile from '../../assets/images/hero/baic-pacheco-proximamente-mobile.png'
 
-// Banner temporal de "Próximamente" para BAIC Pacheco: reemplaza el slider de autos
+// Banner temporal de "Próximamente" para BAIC Torcuato: reemplaza el slider de autos
 // mientras se termina de armar el contenido real del concesionario. Reutiliza las
 // mismas clases .hero / .slide-bg-img del slider (mismo alto/comportamiento full-bleed
 // en desktop y mobile), pero sin flechas, dots ni autoplay -es una sola imagen fija-.
@@ -12,7 +12,7 @@ export default function ComingSoonBanner() {
     <section className="hero hero--static">
       <picture>
         <source media="(orientation: portrait)" srcSet={proximamenteMobile} />
-        <img className="slide-bg-img" src={proximamenteDesktop} alt="BAIC Pacheco - Próximamente" />
+        <img className="slide-bg-img" src={proximamenteDesktop} alt="BAIC Torcuato - Próximamente" />
       </picture>
     </section>
   )

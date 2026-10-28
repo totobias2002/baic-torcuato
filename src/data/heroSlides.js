@@ -50,7 +50,7 @@ export const heroSlides = [
   { id: 'x55-plus', title: 'X55 PLUS', cta: 'DESCUBRILO', to: '/modelos/x55-plus', image: x55plus, mobileImage: x55plusMobile, logo: logo5, position: 'right', variant: 'topband' },
   { id: 'x55-ii', title: 'X55 II', cta: 'DESCUBRILO', to: '/modelos/x55-ii', image: x55ii, mobileImage: x55iiMobile, logo: logo6, position: 'left' },
   { id: 'bj60', title: 'BJ60', cta: 'DESCUBRILO', to: '/modelos/bj60', image: bj60, mobileImage: bj60Mobile, logo: logo7, position: 'left' },
-  // u5-plus también es topband, pero al ir a la izquierda (como el logo BAIC/ARCFOX/PACHECO
+  // u5-plus también es topband, pero al ir a la izquierda (como el logo BAIC/ARCFOX/TORCUATO
   // del navbar) con el mismo top:9% de x55-plus quedaba pisando el navbar -esta foto tiene
   // mucho más margen limpio arriba del techo del auto, así que baja un poco más (topband-low).
   { id: 'u5-plus', title: 'U5 PLUS', cta: 'DESCUBRILO', to: '/modelos/u5-plus', image: u5plus, mobileImage: u5plusMobile, logo: logo8, position: 'left', variant: 'topband-low' }
