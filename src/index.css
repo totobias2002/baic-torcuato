@@ -1876,8 +1876,3 @@ h2.vehicle-cards__heading{text-align:center;font-size:1.6rem;font-weight:800;lin
   .threesixty__badge span{font-size:.9rem;}
   .threesixty__badge small{font-size:.55rem;letter-spacing:1px;}
 }
-
-/* Botón "Postventa" del navbar: pill rojo BAIC, alineado con el resto de los links */
-.navbar__postventa{align-self:center;padding:9px 20px;border-radius:999px;background:#d1251a;color:#fff;font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:background .2s;}
-.navbar__postventa:hover{background:#a81c13;color:#fff;}
-@media (max-width:900px){.navbar__postventa{align-self:flex-start;margin:12px 20px;}}
