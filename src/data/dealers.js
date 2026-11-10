@@ -90,7 +90,8 @@ export const dealers = [
 // Datos propios de la concesionaria: reemplazar por los de cada dealer al duplicar el sitio.
 export const socialLinks = {
   email: 'info@baicpacheco.com.ar',
-  instagram: 'https://www.instagram.com/baicpacheco/',
+  // Vacío a propósito: el sitio no muestra el ícono de Instagram hasta que Torcuato tenga el suyo.
+  instagram: '',
   facebook: 'https://facebook.com/baicargentina',
   youtube: 'https://www.youtube.com/channel/UCgs9-cuY9kvidN4ofkPgtGQ',
   linkedin: 'https://www.linkedin.com/company/baicargentina/',

@@ -10,9 +10,11 @@ export default function SocialRail() {
         <button className="social-rail__item social-rail__top" onClick={scrollTop} aria-label="Volver arriba">
           <ChevronUpIcon size={18} />
         </button>
-        <a className="social-rail__item" href={socialLinks.instagram} target="_blank" rel="noreferrer" aria-label="Instagram">
-          <InstagramIcon size={18} />
-        </a>
+        {socialLinks.instagram && (
+          <a className="social-rail__item" href={socialLinks.instagram} target="_blank" rel="noreferrer" aria-label="Instagram">
+            <InstagramIcon size={18} />
+          </a>
+        )}
       </div>
       <a className="whatsapp-float" href={socialLinks.whatsapp} target="_blank" rel="noreferrer" aria-label="WhatsApp">
         <WhatsappIcon size={26} />
