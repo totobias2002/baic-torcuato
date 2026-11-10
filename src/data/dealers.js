@@ -94,7 +94,7 @@ export const socialLinks = {
   facebook: 'https://facebook.com/baicargentina',
   youtube: 'https://www.youtube.com/channel/UCgs9-cuY9kvidN4ofkPgtGQ',
   linkedin: 'https://www.linkedin.com/company/baicargentina/',
-  whatsapp: 'https://wa.me/5491150008106'
+  whatsapp: 'https://wa.me/5491139269589'
 }
 
 // Datos de Postventa de Torcuato. PENDIENTE: completar estos 2 datos y listo, la página /service
@@ -103,5 +103,5 @@ export const serviceInfo = {
   // Dirección completa, ej: 'Av. Ejemplo 1234, Ciudad, Provincia'. Se usa para el mapa.
   address: '',
   // Número de WhatsApp de postventa con código de país, sin + ni espacios, ej: '5491112345678'.
-  whatsapp: ''
+  whatsapp: '5491139269589'
 }
