@@ -1091,7 +1091,10 @@ h2.vehicle-cards__heading{text-align:center;font-size:1.6rem;font-weight:800;lin
   .slide-arrow{width:44px;height:44px;}
   /* El navbar ya no se "come" 125px en mobile (ver .navbar arriba), así que el hero no necesita
      los +39px extra de alto que compensaban ese overlap -si no, queda un hueco blanco abajo. */
-  .hero{height:100vh;}
+  /* El navbar blanco de mobile (78px) ocupa lugar en el documento, así que el hero tiene que
+     medir el alto de pantalla MENOS esos 78px: si no, el borde inferior queda fuera de la
+     ventana y no se ven los circulitos del carrusel. min-height:0 pisa el 600px de desktop. */
+  .hero{height:calc(100vh - 78px);height:calc(100dvh - 78px);min-height:0;}
   /* El panel de texto solo tenía width:100% -como no estira su alto, quedaba flotando en
      el medio de la tarjeta y se veía la foto cruda arriba y abajo (la "raya" blanca en
      el medio). align-items:stretch hace que el panel cubra toda la altura de la tarjeta. */
