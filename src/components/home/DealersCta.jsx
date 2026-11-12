@@ -1,7 +1,7 @@
 import { MapPinIcon } from '../icons/index.js'
 import mapaArgentina from '../../assets/images/misc/mapa-argentina.webp'
 
-const TORCUATO_MAPS_URL = 'https://maps.app.goo.gl/jWW5cBFK8NZHTuxXA'
+const TORCUATO_MAPS_URL = 'https://maps.app.goo.gl/tpTHkmr97yaLbKbm8'
 
 export default function DealersCta() {
   return (

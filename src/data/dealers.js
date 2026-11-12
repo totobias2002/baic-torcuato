@@ -89,7 +89,8 @@ export const dealers = [
 
 // Datos propios de la concesionaria: reemplazar por los de cada dealer al duplicar el sitio.
 export const socialLinks = {
-  email: 'info@baicpacheco.com.ar',
+  // Vacío: info@baicpacheco.com.ar era el mail de Pacheco, Torcuato es otra agencia.
+  email: '',
   // Vacío a propósito: el sitio no muestra el ícono de Instagram hasta que Torcuato tenga el suyo.
   instagram: '',
   facebook: 'https://facebook.com/baicargentina',
@@ -101,6 +102,9 @@ export const socialLinks = {
 // Datos de Postventa de Torcuato. PENDIENTE: completar estos 2 datos y listo, la página /service
 // muestra la dirección, el mapa y el botón de WhatsApp sola cuando dejan de estar vacíos.
 export const serviceInfo = {
+  // Postventa todavía no abrió: en false el botón del menú aparece apagado ("Próximamente")
+  // y /service redirige al inicio. Cuando abra, poner true y volver a hacer el build.
+  enabled: false,
   // Dirección completa, ej: 'Av. Ejemplo 1234, Ciudad, Provincia'. Se usa para el mapa.
   address: '',
   // Número de WhatsApp de postventa con código de país, sin + ni espacios, ej: '5491112345678'.

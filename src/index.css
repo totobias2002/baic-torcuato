@@ -180,6 +180,8 @@ img{max-width:100%;display:block;}
 .navbar .ui-navlink{color:var(--baic-negro);text-transform:uppercase;font-size:1rem;font-weight:700;letter-spacing:normal;padding:15px 0;line-height:1rem;transition:color .2s ease,text-shadow .2s ease;}
 .navbar .ui-navlink:hover{color:var(--baic-rojo);}
 .navbar .ui-navlink--active{color:var(--baic-rojo);}
+/* Postventa todavía cerrada (serviceInfo.enabled = false): botón apagado, sin hover rojo. */
+.navbar .ui-navlink.ui-navlink--disabled,.navbar .ui-navlink.ui-navlink--disabled:hover{opacity:.4;cursor:not-allowed;color:inherit;text-shadow:none;}
 .navbar__models-trigger:hover{color:var(--baic-rojo);}
 /* Con el navbar flotando transparente sobre la foto del hero, el texto negro se pierde en
    las zonas oscuras de algunas fotos (igual que le pasaba al logo, que ya usa drop-shadow
@@ -445,6 +447,11 @@ img{max-width:100%;display:block;}
 .footer a:hover{color:var(--baic-rojo);}
 .footer__brand{justify-self:end;}
 .footer__legal{max-width:1200px;margin:0 auto;padding:20px 20px 0;border-top:1px solid #2a2b2e;font-size:.72rem;color:#777;text-align:center;line-height:1.7;}
+.footer__branch{max-width:1200px;margin:0 auto 28px;padding:0 20px 24px;box-sizing:border-box;border-bottom:1px solid #333;font-size:.9rem;line-height:1.9;color:#cfcfd2;}
+.footer__branch strong{color:#fff;font-weight:600;}
+.footer__branch span{color:#999;}
+.footer__branch a{color:#999;text-decoration:underline;}
+.footer__branch a:hover{color:#fff;}
 .footer__copyright{max-width:1200px;margin:0 auto;padding:14px 20px 24px;font-size:.75rem;color:#888;text-align:center;}
 
 /* Vehicle detail / dealers / news / contact pages */

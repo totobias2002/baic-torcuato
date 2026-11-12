@@ -1,9 +1,10 @@
-// Envío directo del formulario de Contacto por Formspree (sin backend propio):
-// Formspree recibe el POST y reenvía un mail a la casilla configurada en el formulario de
-// Formspree (it@baicpacheco.com.ar). El ID del form ("mzepvybw") es público -viaja igual en
-// el JS del sitio así que no hace falta mantenerlo en .env, evita depender de reiniciar el
-// servidor de dev para que tome la variable de entorno.
-const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_ID || 'mzepvybw'
+// Respaldo por mail del formulario de Contacto/Postventa vía Formspree (sin backend propio).
+// DESACTIVADO: el form que venía de la web de Pacheco ("mzepvybw") mandaba los mails a la
+// casilla de BAIC Pacheco (it@baicpacheco.com.ar), y Torcuato es otra agencia. Mientras no
+// haya un form de Formspree propio de Torcuato, las consultas salen sólo por WhatsApp.
+// Para activarlo: crear un form en Formspree con el mail de Torcuato y poner su ID acá
+// (o en VITE_FORMSPREE_ID).
+const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_ID || ''
 
 // Arma el link de WhatsApp (el mismo número del botón verde del sitio, socialLinks.whatsapp)
 // con la consulta ya escrita, para que el visitante sólo tenga que apretar "enviar" en
@@ -22,7 +23,7 @@ export const buildWhatsappUrl = (baseUrl, { name, phone, email, message }) => {
 }
 
 export const submitContactRequest = (data) =>
-  fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+  !FORMSPREE_ID ? Promise.resolve(null) : fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
     body: JSON.stringify(data)

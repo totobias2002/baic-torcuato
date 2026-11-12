@@ -1,4 +1,5 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
+import { serviceInfo } from '../data/dealers.js'
 import { MainLayout } from '../components/layout/index.js'
 import {
   HomePage,
@@ -26,7 +27,7 @@ export default function AppRoutes() {
         <Route path="/contacto" element={<ContactPage />} />
         <Route path="/nosotros" element={<AboutPage />} />
         <Route path="/vision" element={<VisionPage />} />
-        <Route path="/service" element={<ServicePage />} />
+        <Route path="/service" element={serviceInfo.enabled ? <ServicePage /> : <Navigate to="/" replace />} />
         <Route path="/descargas" element={<DownloadsPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
